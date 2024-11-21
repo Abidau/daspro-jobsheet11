@@ -1,6 +1,6 @@
 import java.util.Scanner;
 public class TugasNo2 {
-    static int[][] salesData = {
+    static int[][] data = {
         {20, 20, 25, 20, 10, 60, 10}, 
         {30, 80, 40, 10, 25, 10, 25}, 
         {5, 9, 20, 25, 10, 35, 45},   
@@ -11,10 +11,10 @@ public class TugasNo2 {
     static String[] menu = {"Kopi", "Teh", "Es Degan", "Roti Bakar", "Gorengan"};
         public static void tampilkanSeluruhData() {
             System.out.println("Data Penjualan:");
-            for (int i = 0; i < salesData.length; i++) {
+            for (int i = 0; i < data.length; i++) {
                 System.out.print(menu[i] + ": ");
-                    for (int j = 0; j < salesData[i].length; j++) {
-                    System.out.print(salesData[i][j] + " ");
+                    for (int j = 0; j < data[i].length; j++) {
+                    System.out.print(data[i][j] + " ");
                 }
             System.out.println();
         }
@@ -22,10 +22,10 @@ public class TugasNo2 {
 
     public static void tampilkanPerHari() {
         System.out.println("\nData Penjualan dari Hari Pertama hingga Hari Terakhir:");
-        for (int j = 0; j < salesData[0].length; j++) {
+        for (int j = 0; j < data[0].length; j++) {
             System.out.print("Hari ke-" + (j + 1) + ": ");
-            for (int i = 0; i < salesData.length; i++) {
-                System.out.print(menu[i] + " (" + salesData[i][j] + ") ");
+            for (int i = 0; i < data.length; i++) {
+                System.out.print(menu[i] + " (" + data[i][j] + ") ");
             }
             System.out.println();
         }
@@ -35,10 +35,10 @@ public class TugasNo2 {
         int maxMenuIndex = 0;
         int maxPenjualan = 0;
 
-        for (int i = 0; i < salesData.length; i++) {
+        for (int i = 0; i < data.length; i++) {
             int totalPenjualan = 0;
-            for (int j = 0; j < salesData[i].length; j++) {
-                totalPenjualan += salesData[i][j];
+            for (int j = 0; j < data[i].length; j++) {
+                totalPenjualan += data[i][j];
             }
 
             if (totalPenjualan > maxPenjualan) {
@@ -52,12 +52,12 @@ public class TugasNo2 {
 
     public static void rataRataPenjualan() {
         System.out.println("\nRata-rata penjualan untuk setiap menu:");
-        for (int i = 0; i < salesData.length; i++) {
+        for (int i = 0; i < data.length; i++) {
             int totalPenjualan = 0;
-            for (int j = 0; j < salesData[i].length; j++) {
-                totalPenjualan += salesData[i][j];
+            for (int j = 0; j < data[i].length; j++) {
+                totalPenjualan += data[i][j];
             }
-            double rataRata = (double) totalPenjualan / salesData[i].length;
+            double rataRata = (double) totalPenjualan / data[i].length;
             System.out.println(menu[i] + ": " + rataRata);
         }
     }
